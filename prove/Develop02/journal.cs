@@ -47,7 +47,7 @@ public class Journal
                     newEntry._dateTime = DateTime.Parse(parts[0].Replace("Date: ", "")); // Gets rid of the text "Date: " and only saves the date so it can be stored as _dateTime
                     newEntry._randomPrompt = parts[1]; // stores the prompt as the prompt in the string
                 }
-                else if (!string.IsNullOrWhiteSpace(line) && newEntry != null) // If the line does not start with "Date: " it must have an entry on it
+                else if (!string.IsNullOrWhiteSpace(line) && newEntry != null) // Checks if they inputted an entry and checks if it has a date and prompt attatched to it
                 {
                     newEntry._userData = line; // adds the user input and stores to to be compiled into the list.
                     _entryList.Add(newEntry); // Add the entry to the list
