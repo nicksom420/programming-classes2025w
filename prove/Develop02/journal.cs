@@ -36,20 +36,20 @@ public class Journal
             
             Entry newEntry = null; // Initialize a new object to hold the entry data
             
-            // Read each line one at a time
-            foreach (string line in File.ReadLines(_filename))
+            
+            foreach (string line in File.ReadLines(_filename)) // read the lines from the file
             {
                 if (line.StartsWith("Date:")) // Finds out if the line starts with "Date:" signifying an entry
                 {
                     newEntry = new Entry(); // Create a new Entry instance to update with entry information
 
-                    string[] parts = line.Split(" - Prompt: "); // Split the string into two parts the date and the prompt. (splits and saves everything before " - Prompt:" as parts[0] and everything after as parts [2])
+                    string[] parts = line.Split(" - Prompt: "); // Split the string into two parts the date and the prompt. (splits and saves everything before " - Prompt:" as parts[0] and everything after as parts [1])
                     newEntry._dateTime = DateTime.Parse(parts[0].Replace("Date: ", "")); // Gets rid of the text "Date: " and only saves the date so it can be stored as _dateTime
                     newEntry._randomPrompt = parts[1]; // stores the prompt as the prompt in the string
                 }
-                else if (!string.IsNullOrWhiteSpace(line) && newEntry != null) // If there's a valid user response
+                else if (!string.IsNullOrWhiteSpace(line) && newEntry != null) // If the line does not start with "Date: " it must have an entry on it
                 {
-                    newEntry._userData = line; // 
+                    newEntry._userData = line; // adds the user input and stores to to be compiled into the list.
                     _entryList.Add(newEntry); // Add the entry to the list
                     newEntry = null; // Reset the temporary entry for the next journal entry
                 }
