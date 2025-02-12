@@ -10,14 +10,11 @@ class Scripture
         //Make a list to hold references
         List<string> referencesList = new List<string>();
         
-        referencesList.Add("Joshua 1:9");
         referencesList.Add("D&C 4:1-7");
 
         //Get a dictionary containing scriptures
         Dictionary<string, List<string>> scriptureDictionary = LoadScriptures(_fileName);
         
-        
-
     
     }
 

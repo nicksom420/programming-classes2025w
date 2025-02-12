@@ -1,15 +1,5 @@
 {
 
-    "Joshua": {
-        "1": {
-            "9": ["Have", "not", "I", "commanded", "thee?", 
-                "Be", "strong", "and", "of", "a", "good", "courage;", 
-                "be", "not", "afraid,", "neither", "be", "thou", "dismayed:", 
-                "for", "the", "Lord", "thy", "God", "is", "with", "thee", 
-                "whithersoever", "thou", "goest."]
-        }
-    },
-
     "D&C": {
         "4": {
             "1": ["Now", "behold,", "a", "disposition", "to", "commit", "sin", "is", "not", "sufficient", "for", "salvation."],
@@ -21,14 +11,5 @@
             "7": ["And", "whosoever", "shall", "not", "be", "found", "worthy", "of", "the", "blessing", "of", "the", "gospel", "shall", "be", "damned."]
         }
     }
-    
-
-    
-    
-   
-
-
-
-
 
 }
