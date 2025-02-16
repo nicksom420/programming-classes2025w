@@ -17,4 +17,16 @@ class Word
     {
         return _word;
     }
+
+    public string Render(bool hide) // Handles if the word should be hidden or not
+{
+    if (hide)
+    {
+        return Hide(); // Return underscores
+    }
+    else
+    {
+        return Show(); // Return the actual word
+    }
+}
 }

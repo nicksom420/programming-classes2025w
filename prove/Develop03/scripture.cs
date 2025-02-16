@@ -27,15 +27,7 @@ class Scripture
     {
         for (int i = 0; i < _objectScriptures.Count; i++) // Iterates through each index to determine if it should be shown or hidden
         {
-            
-            if (_hiddenWords.Contains(i))
-            {
-                Console.Write(_objectScriptures[i].Hide() + " "); 
-            }
-            else
-            {
-                Console.Write(_objectScriptures[i].Show() + " "); 
-            }
+                Console.Write(_objectScriptures[i].Render(_hiddenWords.Contains(i)) + " "); //Checks if the word is in the hidden words list and hides it or shows it
         }
         Console.WriteLine();
     }
