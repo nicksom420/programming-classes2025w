@@ -1,7 +1,7 @@
 
 class Reference {
 
-    private int _chapter;
+    private int _chapter; 
 
     private string _book;
 
@@ -9,7 +9,7 @@ class Reference {
 
     private int _lastVerse;
 
-    public Reference(string book, int chapter, int firstVerse, int lastVerse)
+    public Reference(string book, int chapter, int firstVerse, int lastVerse) //Constructor to initialize each perameter as a private variable
     {
         _book = book;
         _chapter = chapter;
@@ -17,7 +17,7 @@ class Reference {
         _lastVerse = lastVerse;
     }
 
-    public Reference(string book, int chapter, int verse)
+    public Reference(string book, int chapter, int verse) // Constructor to initialize each perameter as a private variable and takes into account single verse
     {
         _book = book;
         _chapter = chapter;
@@ -25,13 +25,12 @@ class Reference {
         _lastVerse = verse;
     }
 
-
-    public void Display()
+    public string FormattedReference() // Formatts the reference for proper use
     {
         if (_firstVerse == _lastVerse)
-            Console.WriteLine($"{_book} {_chapter}:{_firstVerse}");
+            return $"{_book} {_chapter}:{_firstVerse}";
         else
-            Console.WriteLine($"{_book} {_chapter}:{_firstVerse}-{_lastVerse}");
+            return $"{_book} {_chapter}:{_firstVerse}-{_lastVerse}";
     }
 
 }
