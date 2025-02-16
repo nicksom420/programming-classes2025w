@@ -22,11 +22,11 @@ class Word
 {
     if (hide)
     {
-        return Hide(); // Return underscores
+        return Hide(); //Returns word replaced by underscores
     }
     else
     {
-        return Show(); // Return the actual word
+        return Show(); //Returns the original unchanged word
     }
 }
 }
