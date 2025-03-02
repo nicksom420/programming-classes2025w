@@ -4,7 +4,7 @@ public class ReflectActivity: Activity
     public ReflectActivity(string title, string description, int duration) // Inheritance Constructor
         :base(title,description,duration)
         {
-
+            _duration = duration;
         }
 
     private List<string> _questions = new List<string>() // List of prompts to be shown to the user

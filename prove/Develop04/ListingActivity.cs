@@ -5,7 +5,7 @@ public class ListingActivity: Activity
     public ListingActivity(string title, string description, int duration)
         :base(title, description,duration)
         {
-
+            _duration = duration;
         }
 
     private List<string> _prompts = new List<string>()
