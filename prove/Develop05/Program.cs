@@ -1,9 +1,11 @@
 using System;
+using System.Dynamic;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop05 World!");
+        Menu mymenu = new();
+        mymenu.MenuLoop();
     }
 }
