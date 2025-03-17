@@ -33,7 +33,7 @@ public class Eternal:Goal
     {
         string statusSymbol = _status ? "X" : " "; // Ternary Operator
 
-        return$"[{statusSymbol}] {_goal} ({_description})";
+        return$"[{statusSymbol}] {Capitalize(_goal)} ({Capitalize(_description)})";
     }
 
     public override void UpdateStatus()
