@@ -9,7 +9,6 @@ public class GameManager
     private Snake _snake; // this is an instance that also has access to snake segment since it inherits from entity
     private Map _map;
     private Food _food;
-    private SnakeSegment _snakeSegment;
     private Thread _inputThread;
     private Score _score;
     private bool _collisionDetection;

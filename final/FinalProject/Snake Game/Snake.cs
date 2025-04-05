@@ -2,10 +2,6 @@ public class Snake: MovingEntity
 {
     private List<SnakeSegment> _segments = new(); 
 
-    private string _direction;
-
-    private UserInput _input;
-
     public Snake(int startX, int startY, string direction) : base(startX, startY, direction) 
     {
         _direction = direction;

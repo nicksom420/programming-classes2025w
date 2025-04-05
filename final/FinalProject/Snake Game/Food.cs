@@ -1,9 +1,5 @@
 public class Food: Entity
 {
-
-
-    
-
     private string _apple;
 
     private Snake _snake;
@@ -13,6 +9,7 @@ public class Food: Entity
         _xPosition = x;
         _yPosition = y;
         _snake = snake;
+        _apple = "$";
 
 
     }
@@ -42,7 +39,7 @@ public class Food: Entity
     {
         
         Console.SetCursorPosition(_xPosition,_yPosition);
-        Console.Write("$");
+        Console.Write($"{_apple}");
     }
 
     public override void UpdatePosition()
