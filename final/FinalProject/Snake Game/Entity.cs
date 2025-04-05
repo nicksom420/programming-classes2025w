@@ -14,7 +14,5 @@ public abstract class Entity
 
     public abstract void Render();
 
-    public abstract bool Collisions();
-
     public abstract void UpdatePosition();
 }

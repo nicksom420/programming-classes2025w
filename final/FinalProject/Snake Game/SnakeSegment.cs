@@ -50,6 +50,21 @@ public class SnakeSegment: MovingEntity
         Console.Write(Type == SegmentType.Head ? _head : _body);   
     }
 
+    public int GetPreviousX()
+    {
+        return _previousX;
+    }
+
+    public int GetPreviousY()
+    {
+        return _previousY;
+    }
+
+    public string GetDirection()
+    {
+        return _direction;
+    }
+
     public int GetXCoord()
     {
         return _xPosition;
@@ -61,7 +76,7 @@ public class SnakeSegment: MovingEntity
     }
 
 
-    public override bool Collisions()
+    public  bool Collisions()
     {
         throw new NotImplementedException();
     }
@@ -107,6 +122,7 @@ public class SnakeSegment: MovingEntity
 
             _xPosition = previousSegment._previousX;
             _yPosition = previousSegment._previousY;
+            _direction = previousSegment._direction;
         }
     }   
 }

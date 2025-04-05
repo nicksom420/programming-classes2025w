@@ -24,6 +24,7 @@ public class Snake: MovingEntity
         return _segments;
     }
 
+
     public SnakeSegment GetHeadSegment()
     {
         foreach (SnakeSegment segment in _segments)
@@ -60,10 +61,14 @@ public class Snake: MovingEntity
  
     public void Grow()
     {
-        throw new NotImplementedException();
+        // Get the last segment (tail)
+        SnakeSegment lastSegment = _segments[_segments.Count - 1];
+        
+        // Add a new segment at the tail's previous position
+        _segments.Add(new SnakeSegment(lastSegment.GetPreviousX(), lastSegment.GetPreviousY(), lastSegment.GetDirection(), this, SnakeSegment.SegmentType.Body));
     }
 
-    public override bool Collisions()
+    public bool Collisions()
     {
         SnakeSegment head = _segments[0];
 
