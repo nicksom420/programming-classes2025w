@@ -103,6 +103,9 @@ public class GameManager
                 Thread.Sleep(450);
             }
 
+            Thread.Sleep(100);
+            Console.Clear();
+            Thread.Sleep(100);
             Console.Clear();
             Console.SetCursorPosition(15,7);
             Console.Write("GameOver");
