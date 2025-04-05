@@ -9,6 +9,8 @@ public class UserInput
 
     private string _right;
 
+    
+
     public UserInput()
     {
         _up = "Up";
@@ -21,14 +23,25 @@ public class UserInput
 
     }
 
-
-    public string GetKeyPress()
+    public string DirectionInput()
     {
+
         
-        ConsoleKeyInfo keyInfo = Console.ReadKey(true); 
+        {
+            ConsoleKey key = Console.ReadKey(true).Key;
         
-       
-        return keyInfo.Key.ToString();
+            switch (key)
+            {
+                case ConsoleKey.W: return _up;
+                case ConsoleKey.S: return _down;
+                case ConsoleKey.A: return _left;
+                case ConsoleKey.D: return _right;
+            }
+        }
+        return null;
+
+
+
     }
 
     public void Pause()

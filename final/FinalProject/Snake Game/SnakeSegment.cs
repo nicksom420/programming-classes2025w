@@ -1,4 +1,4 @@
-public class SnakeSegment: Snake
+public class SnakeSegment: MovingEntity
 {
 
     // Allows me to know which snake segment is the head or the body so that it can be rendered and moved accordingly
@@ -8,17 +8,20 @@ public class SnakeSegment: Snake
         Body // shows what segment is the body
     }
 
+    private Snake _snake;
+
     private string _body;
 
     private string _head;
 
-    public int _xPosition { get; set; }
+    private SegmentType Type { get; set; }
 
-    int _yPosition { get; set; }
+    private int _previousX;
 
-    public SegmentType Type { get; set; }
+    private int _previousY;
 
-    public SnakeSegment(int x, int y, SegmentType type)
+    public SnakeSegment(int x, int y, string direction, Snake snake, SegmentType type)
+        : base(x, y, direction)
     {
 
         _head = "@";
@@ -30,26 +33,81 @@ public class SnakeSegment: Snake
         _yPosition = y;
 
         Type = type;
+
+        _snake = snake;
+
     }
+
+    public bool IsHead() => Type == SegmentType.Head;
+    public bool IsBody() => Type == SegmentType.Body;
 
     public override void Render()
     {
+        Console.SetCursorPosition(_previousX,_previousY);
+        Console.Write(" ");
+
         Console.SetCursorPosition(_xPosition,_yPosition);
-        if (Type == SegmentType.Head)
-            Console.Write($"{_head}");
-        if (Type == SegmentType.Body)
-            Console.Write($"{_body}");
+        Console.Write(Type == SegmentType.Head ? _head : _body);   
     }
 
-    public override void Collisions()
+    public int GetXCoord()
     {
-        
+        return _xPosition;
+    }
+
+    public int GetYCoord()
+    {
+        return _yPosition;
+    }
+
+
+    public override bool Collisions()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override  void UpdatePosition()
+    {
+    
+    }
+
+    public override void Move()
+    {
+        throw new NotImplementedException();
     }
 
     // to update the coordinate of the current segment
-    public override void UpdatePosition()
+    public void UpdateCoordinates(string direction, int index)
     {
-        // in order to update the position we first store the position of the head, then we update the position of the head according to what direction the snake is facing. Then we update from the tail to copy the next segments position. Once we get to the second segment object aka the first body segment we update that according to the previous head position previously stored.
-    }
 
+        _previousX = _xPosition;
+        _previousY = _yPosition;
+
+        if (Type == SegmentType.Head)
+        {
+            switch(direction)
+            {
+                case "Up":
+                    _yPosition--;
+                    break;
+                case "Down":
+                    _yPosition++;
+                    break;
+                case "Left":
+                    _xPosition--;
+                    break;
+                case "Right":
+                    _xPosition++;
+                    break;
+            }
+        }
+        else if (Type == SegmentType.Body)
+        {
+            SnakeSegment previousSegment = _snake.GetSegments()[index-1];
+
+            _xPosition = previousSegment._previousX;
+            _yPosition = previousSegment._previousY;
+        }
+    }   
 }
+

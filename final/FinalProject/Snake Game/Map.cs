@@ -33,6 +33,7 @@ public class Map
                 if (x == 0 || x == _wallWidth - 1 || y == 0 || y == _wallHeight - 1)
                 {
                     Console.Write($"{_wall}");
+                    Thread.Sleep(50);
                 }
                 else
                 {
