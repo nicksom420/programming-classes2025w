@@ -4,7 +4,7 @@ class Program
 
     static void Main(string[] args)
     {
-
+        Console.Clear();
         Console.WriteLine("Welcome to the Snake Game");
         Console.WriteLine("The snakes head is represented as @ and the body as O and the fruit as $.");
         Console.WriteLine("The goal is to get the longest snake as possile good luck ^_^");
